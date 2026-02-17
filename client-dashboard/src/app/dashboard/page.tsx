@@ -50,8 +50,10 @@ export default function Dashboard() {
 
     const checkUser = async () => {
         setLoading(true)
-        const { data: { session } } = await supabase.auth.getSession()
-        if (!session) {
+        const { data: { session }, error } = await supabase.auth.getSession()
+        if (error || !session) {
+            console.log('No session found, redirecting to login');
+            await supabase.auth.signOut() // Ensure clean state
             router.push('/login')
             return
         }

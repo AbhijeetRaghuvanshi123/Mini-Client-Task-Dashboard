@@ -86,7 +86,7 @@ export default function CreateTaskModal({ isOpen, onClose, onTaskCreated }: Crea
         >
             {/* Modal Panel */}
             <div
-                className="bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden cursor-default"
+                className="bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden cursor-default m-4 sm:m-0"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
@@ -130,7 +130,7 @@ export default function CreateTaskModal({ isOpen, onClose, onTaskCreated }: Crea
                             />
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label htmlFor="due" className="block text-sm font-bold text-gray-900 mb-1">Due Date</label>
                                 <input
